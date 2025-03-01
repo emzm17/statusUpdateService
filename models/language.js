@@ -1,5 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
-import { sequelize } from '../config/databaseConfig.js'; // Adjust the path to your database configuration
+import { sequelize } from '../config/databaseConfig.js';
 
 class Language extends Model { }
 
