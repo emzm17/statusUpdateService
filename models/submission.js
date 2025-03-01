@@ -1,6 +1,6 @@
 import { Model, DataTypes } from 'sequelize';
 import { v4 as uuidv4 } from 'uuid';
-import { sequelize } from '../config/databaseConfig.js'; // Adjust the path to your database configuration
+import { sequelize } from '../config/databaseConfig.js';
 import { Language } from '../models/language.js';
 class Submission extends Model { }
 
@@ -18,12 +18,12 @@ Submission.init({
         type: DataTypes.STRING,
         allowNull: false,
         references: {
-            model: 'Language', // Name of the language model/table
+            model: 'Language',
             key: 'id',
         },
     },
     status: {
-        type: DataTypes.ENUM('QUEUED', 'RUNNING', 'COMPLETED', 'ERROR'), // Replace with your actual statuses
+        type: DataTypes.ENUM('QUEUED', 'RUNNING', 'COMPLETED', 'ERROR'),
         allowNull: false,
     },
     result: {

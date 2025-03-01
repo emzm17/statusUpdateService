@@ -1,10 +1,10 @@
-import { Submission } from '../models/submission.js'; // Adjust the import path as needed
+import { Submission } from '../models/submission.js';
 
 export async function updateSubmission(submissionid, newStatus, newResult) {
   try {
     const [updatedRowsCount] = await Submission.update(
-      { status: newStatus, result: newResult }, // Fields to update
-      { where: { id: submissionid } } // Criteria to select the record
+      { status: newStatus, result: newResult },
+      { where: { id: submissionid } }
     );
 
     if (updatedRowsCount === 0) {
